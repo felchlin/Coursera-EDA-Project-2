@@ -15,7 +15,7 @@
 # satisfying the above requirement(s).
 #
 
-setwd("C:/Users/jfelchli/Documents/Coursera/Data Science/Exploratory Data Analysis/Project 2")
+setwd("C:/Users/jfelchli/Documents/Coursera/Data Science/Exploratory Data Analysis/Coursera-EDA-Project-2")
 
 
 # Load the data
@@ -47,8 +47,8 @@ ylim.min <- floor(1.0*min(eby$x))
 ylim.max <- ceiling(1.0*max(eby$x))
 
 # Use expressions for subscripting in axes and main title
-ylab <- expression(PM[2.5] * " Emissions [tons]")
-title <- expression(PM[2.5] * " by Year in Baltimore City, Maryland")
+ylab <- "Emissions [tons]"
+title <- expression(PM[2.5] * " Emissions in Baltimore City, Maryland - All Sources")
 
 # Symbol is a filled circle
 symbol <- 19
@@ -64,8 +64,3 @@ legend("topright", as.character(eby$year), pch=symbol, col=colors, cex=1, pt.cex
 
 # Turn off graphics devicse
 dev.off()
-
-
-
-
-

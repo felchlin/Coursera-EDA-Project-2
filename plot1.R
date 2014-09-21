@@ -16,7 +16,7 @@
 # satisfying the above requirement(s).
 #
 
-setwd("C:/Users/jfelchli/Documents/Coursera/Data Science/Exploratory Data Analysis/Project 2")
+setwd("C:/Users/jfelchli/Documents/Coursera/Data Science/Exploratory Data Analysis/Coursera-EDA-Project-2")
 
 
 # Load the data
@@ -34,6 +34,9 @@ png("plot1.png")
 num.colors <- length(eby$year)
 colors <- rainbow(num.colors)
 
+# Scale Y axis so that it will be listed as integers rather than scientific notation
+eby$x <- eby$x/1000000
+
 
 # Axis limits adjustments, if any (defaults look OK)
 xlim.min <- min(eby$year) - 0
@@ -42,8 +45,8 @@ ylim.min <- floor(1.0*min(eby$x))
 ylim.max <- ceiling(1.0*max(eby$x))
 
 # Use expressions for subscripting in axes and main title
-ylab <- expression(PM[2.5] * " Emissions [tons]")
-title <- expression(PM[2.5] * " by Year (USA)")
+ylab <- "Emissions [megatons]"
+title <- expression(PM[2.5] * " Emissions in USA - All sources")
 
 # Symbol is a filled circle
 symbol <- 19
@@ -59,8 +62,3 @@ legend("topright", as.character(eby$year), pch=symbol, col=colors, cex=1, pt.cex
 
 # Turn off graphics devicse
 dev.off()
-
-
-
-
-
